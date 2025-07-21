@@ -1,5 +1,4 @@
-cmake -S . -B build
-cmake --build build
+./build.sh
 if [ $? == 0 ]; then
     ./build/KARTGAME
 fi
