@@ -3,6 +3,7 @@
 #include <SDL3/SDL.h>
 #include <iostream>
 #include "config.h"
+#include "input_manager.h"
 #include "texture_manager.h"
 
 class Game
@@ -21,6 +22,7 @@ private:
     float mDt;
 
     TextureManager mTextureManager;
+    InputManager mInputManager;
 private:
     void Input();
     void Update();

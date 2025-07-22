@@ -12,8 +12,11 @@ add_subdirectory(vendor/SDL EXCLUDE_FROM_ALL)
 add_subdirectory(vendor/SDL_image EXCLUDE_FROM_ALL)
 
 add_executable(${PROJECT_NAME} 
+source/entity.cpp
     source/game.cpp
     source/texture_manager.cpp
+    source/player.cpp
+    source/input_manager.cpp
     source/main.cpp)
 
 target_include_directories("${PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")

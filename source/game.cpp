@@ -25,6 +25,7 @@ Game::Game()
     mLastTime = SDL_GetTicks();
 
     mTextureManager.LoadAllTextures(mRenderer);
+    mInputManager.Init();
 
     mRunning = true;
 }
@@ -49,6 +50,7 @@ void Game::Run()
 
 void Game::Input()
 {
+
     for (SDL_Event event; SDL_PollEvent(&event);)
     {
         switch (event.type)
@@ -57,6 +59,8 @@ void Game::Input()
                 mRunning = false;
             break;
         }
+
+        mInputManager.Input(event);
     }
 }
 
@@ -64,6 +68,8 @@ void Game::Update()
 {
     mCurrentTime = SDL_GetTicks();
     mDt = (mCurrentTime - mLastTime) / Config::DELTA_DIVIDEND;
+
+    printf("%d\n", mInputManager.GetHorizontal());
 
     mLastTime = mCurrentTime;
 }
