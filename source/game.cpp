@@ -59,7 +59,6 @@ void Game::Input()
                 mRunning = false;
             break;
         }
-
         mInputManager.Input(event);
     }
 }
